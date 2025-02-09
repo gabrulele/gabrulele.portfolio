@@ -102,13 +102,13 @@ nav ul li a:hover {
 }
 
 .about, .projects, .contact {
-    padding: 0.5px 20px;
+    padding: 10px 20px;
     text-align: center;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #00adb5;
 }
 
