@@ -1,1 +1,1 @@
-site: https://github.com/gabrulele.github.io/gabrulele.portfolio
+site: https://gabrulele.github.io/gabrulele.portfolio
