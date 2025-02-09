@@ -4,29 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Mio Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 50px; }
-        h1 { color: #333; }
-        .projects { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .project { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 200px; }
-        a { text-decoration: none; color: #007acc; }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Ciao, sono [Il Tuo Nome]!</h1>
-    <p>Benvenuto nel mio portfolio. Ecco alcuni dei miei progetti:</p>
-    
-    <div class="projects">
-        <div class="project">
-            <h3>Progetto 1</h3>
-            <p>Descrizione breve del progetto.</p>
-            <a href="https://link-al-progetto.com" target="_blank">Vedi progetto</a>
+    <header>
+        <nav>
+            <div class="logo">[Il Tuo Nome]</div>
+            <ul>
+                <li><a href="#about">Chi Sono</a></li>
+                <li><a href="#projects">Progetti</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Ciao, sono [Il Tuo Nome]</h1>
+        <p>Sviluppatore Web | Designer | Creativo</p>
+        <a href="#projects" class="btn">Guarda i miei progetti</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Chi Sono</h2>
+        <p>Mi chiamo [Il Tuo Nome] e sono uno sviluppatore web appassionato di creare esperienze digitali uniche e funzionali.</p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Progetti</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Progetto 1</h3>
+                <p>Descrizione breve del progetto.</p>
+                <a href="https://link-al-progetto.com" target="_blank">Vedi progetto</a>
+            </div>
+            <div class="project-card">
+                <h3>Progetto 2</h3>
+                <p>Descrizione breve del progetto.</p>
+                <a href="https://link-al-progetto.com" target="_blank">Vedi progetto</a>
+            </div>
+            <div class="project-card">
+                <h3>Progetto 3</h3>
+                <p>Descrizione breve del progetto.</p>
+                <a href="https://link-al-progetto.com" target="_blank">Vedi progetto</a>
+            </div>
         </div>
-        <div class="project">
-            <h3>Progetto 2</h3>
-            <p>Descrizione breve del progetto.</p>
-            <a href="https://link-al-progetto.com" target="_blank">Vedi progetto</a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contattami</h2>
+        <p>Mi trovi su:</p>
+        <div class="socials">
+            <a href="https://github.com/tuo_username" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/tuo_username" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tuoemail@example.com"><i class="fas fa-envelope"></i></a>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Il Tuo Nome]. Tutti i diritti riservati.</p>
+    </footer>
 </body>
 </html>
