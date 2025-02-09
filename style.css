@@ -80,10 +80,11 @@ nav ul li a:hover {
 }
 
 .hero img.hero-image {
-    width: 150px;  /* Modifica la larghezza dell'immagine */
-    height: auto;
+    width: 60px;  /* Imposta la larghezza dell'immagine (puoi regolarla come preferisci) */
+    height: 60px;  /* Imposta l'altezza dell'immagine per mantenere le proporzioni corrette */
     border-radius: 50%;  /* Rende l'immagine rotonda */
-    margin-bottom: 20px;
+    object-fit: cover;  /* Assicura che l'immagine si adatti bene alla forma rotonda */
+    margin-bottom: 20px;  /* Distanza tra l'immagine e il testo sottostante */
 }
 
 .btn {
