@@ -57,7 +57,7 @@ nav ul li a:hover {
 
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    min-height: 50vh; /* Ridotto l'altezza minima */
+    min-height: 50vh; /* Mantiene la riduzione dell'altezza minima */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,19 +102,33 @@ nav ul li a:hover {
     background: #007a80;
 }
 
-.about, .projects, .contact {
-    padding: 20px;
-    text-align: center;
+/* Contenitore per la sezione "Who I am" */
+.about-container {
+    position: relative;
+    height: 30vh; /* Imposta un'altezza per il contenitore */
 }
 
+/* Sezione "Who I am" */
 .about {
-    margin-top: 50px; /* Aggiunge spazio sopra la sezione */
+    position: absolute;
+    top: 50%; /* Posiziona il top della sezione a metà del contenitore */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra la sezione sia orizzontalmente che verticalmente */
+    text-align: center;
+    padding: 20px;
+    width: 80%; /* Imposta una larghezza massima per la sezione */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #00adb5;
+}
+
+.projects, .contact {
+    padding: 20px;
+    text-align: center;
 }
 
 .project-grid {
