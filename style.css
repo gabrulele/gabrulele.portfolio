@@ -165,30 +165,20 @@ h2 {
     background-color: #3e8e41;
 }
 
-/* Nasconde le checkbox */
-.description-toggle {
-    display: none;
-}
-
 /* Nasconde le descrizioni inizialmente */
 .project-description {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.hidden {
     display: none;
-    padding: 10px; /* Aggiungi un po' di spazio intorno alla descrizione */
-    border: 1px solid #ccc; /* Aggiungi un bordo per separare dalla card */
-    margin-top: 5px; /* Aggiungi un po' di spazio sopra la descrizione */
 }
 
-/* Mostra le descrizioni quando la checkbox è checked (selettore più specifico) */
-#data-integration-toggle:checked + .description-button + .data-integration-description {
-    display: block;
-}
-
-#claims-extraction-toggle:checked + .description-button + .claims-extraction-description {
-    display: block;
-}
-
-#variables-stars-toggle:checked + .description-button + .variables-stars-description {
-    display: block;
+/* Stile per il cursore */
+.description-button {
+    cursor: pointer;
 }
 
 .socials {
