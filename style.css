@@ -57,7 +57,7 @@ nav ul li a:hover {
 
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    min-height: 100vh; 
+    min-height: 100vh; /* Altezza minima per coprire l'intera viewport */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,6 +84,7 @@ nav ul li a:hover {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center;
     margin-bottom: 20px;
 }
 
@@ -104,6 +105,10 @@ nav ul li a:hover {
 .about, .projects, .contact {
     padding: 20px;
     text-align: center;
+}
+
+.about {
+    margin-top: 50px; /* Aggiunge spazio sopra la sezione */
 }
 
 h2 {
@@ -142,7 +147,7 @@ h2 {
 
 /* Stili per il pulsante "Description" */
 .description-button {
-    background-color: #00adb5;
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -157,7 +162,7 @@ h2 {
 }
 
 .description-button:hover {
-    background-color: #00adb5;
+    background-color: #3e8e41;
 }
 
 /* Nasconde le checkbox */
@@ -173,8 +178,16 @@ h2 {
     margin-top: 5px; /* Aggiungi un po' di spazio sopra la descrizione */
 }
 
-/* Mostra le descrizioni quando la checkbox è checked */
-.description-toggle:checked + .description-button + .project-description {
+/* Mostra le descrizioni quando la checkbox è checked (selettore più specifico) */
+#data-integration-toggle:checked + .description-button + .data-integration-description {
+    display: block;
+}
+
+#claims-extraction-toggle:checked + .description-button + .claims-extraction-description {
+    display: block;
+}
+
+#variables-stars-toggle:checked + .description-button + .variables-stars-description {
     display: block;
 }
 
