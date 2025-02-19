@@ -58,7 +58,7 @@ nav ul li a:hover {
 
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    min-height: 50vh; /* Mantiene la riduzione dell'altezza minima */
+    min-height: 100vh; /* Mantiene la riduzione dell'altezza minima */
     display: flex;
     flex-direction: column;
     justify-content: center;
