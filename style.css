@@ -57,7 +57,7 @@ nav ul li a:hover {
 
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    min-height: 100vh; /* Altezza minima per coprire l'intera viewport */
+    min-height: 70vh; /* Ridotto l'altezza minima */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,7 +147,7 @@ h2 {
 
 /* Stili per l'elemento summary (pulsante "Description") */
 summary {
-    background-color: #00adb5;
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -159,6 +159,7 @@ summary {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-weight: bold; /* Aggiunge il grassetto */
 }
 
 summary:hover {
