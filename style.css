@@ -165,7 +165,7 @@ h2 {
 
 /* Stili per l'elemento summary (pulsante "Description") */
 summary {
-    background-color: #4CAF50;
+    background-color: #00adb5;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -181,7 +181,7 @@ summary {
 }
 
 summary:hover {
-    background-color: #3e8e41;
+    background-color: #00adb5;
 }
 
 /* Rimuove la freccia predefinita di details */
