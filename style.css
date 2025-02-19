@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Assicurati che tutti gli elementi abbiano questo */
 }
 
 body {
@@ -9,7 +9,8 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    padding-top: 100px; /* Aggiungi un padding per l'header fisso */
+    /* Ho commentato padding-top perchè non funziona */
+    /* padding-top: 80px;  Aggiungi un padding per l'header fisso */
 }
 
 header {
@@ -21,6 +22,20 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box; /* Aggiungi box-sizing all'header */
+}
+
+.hero {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    min-height: 50vh; /* Mantiene la riduzione dell'altezza minima */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 80px; /* Aggiungi un margin-top alla sezione hero */
 }
 
 nav {
@@ -54,18 +69,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #00adb5;
-}
-
-.hero {
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    min-height: 100vh; /* Mantiene la riduzione dell'altezza minima */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
 }
 
 .hero h1 {
