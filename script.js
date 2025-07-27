@@ -15,16 +15,16 @@ const translations = {
         about: {
             title: "Chi sono",
             subtitle: "La mia storia e il mio percorso",
-            description: "Mi chiamo Gabriele Rizzitiello e sono uno studente di Sistemi informatici complessi, attualmente sto conseguendo la laurea magistrale in Data Engineering presso l'Università Roma Tre. Sono appassionato di tecnologie innovative e dell'analisi dei dati.",
-            projects: "Progetti completati",
+            description: "Mi chiamo Gabriele Rizzitiello e sono uno studente di Ingegneria Informatica, attualmente sto conseguendo la laurea magistrale in Data Engineering presso l'Università degli Studi di Roma Tre. Sono particolarmente appassionato a contesti di studio legati a Big Data, analisi dei dati e Deep Learning. In questa pagina cerco di raccogliere i principali progetti realizzati durante gli anni di studio, ogni progetto ha rappresentato un'opportunità per applicare le mie competenze e imparare nuove tecnologie.",
+            projects: "download CV",
             experience: "Anni di esperienza", 
             passion: "Passione per i dati"
         },
         skills: {
             title: "Competenze",
-            subtitle: "Le tecnologie che utilizzo",
+            subtitle: "Tech Stack",
             programming: "Linguaggi di Programmazione",
-            data: "Data Engineering",
+            data: "Data Engineering & Big Data",
             tools: "Tools & Frameworks"
         },
         projects: {
