@@ -29,18 +29,39 @@
                 <!-- Controlli per tema e lingua -->
                 <div class="nav-controls">
                     <div class="language-selector">
-                        <select id="language-select">
-                            <option value="it">🇮🇹 IT</option>
-                            <option value="en">🇺🇸 EN</option>
-                            <option value="es">🇪🇸 ES</option>
-                        </select>
+                        <div class="language-dropdown">
+                            <button class="language-btn" id="language-btn">
+                                <span class="flag">🇮🇹</span>
+                                <span class="lang-code">IT</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="language-options" id="language-options">
+                                <div class="language-option" data-lang="it">
+                                    <span class="flag">🇮🇹</span>
+                                    <span>Italiano</span>
+                                </div>
+                                <div class="language-option" data-lang="en">
+                                    <span class="flag">🇺🇸</span>
+                                    <span>English</span>
+                                </div>
+                                <div class="language-option" data-lang="es">
+                                    <span class="flag">🇪🇸</span>
+                                    <span>Español</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="theme-toggle">
                         <input type="checkbox" id="theme-switch" class="theme-switch">
                         <label for="theme-switch" class="theme-label">
-                            <i class="fas fa-sun"></i>
-                            <i class="fas fa-moon"></i>
+                            <div class="theme-icon sun-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="theme-icon moon-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="theme-slider"></div>
                         </label>
                     </div>
                 </div>
@@ -68,10 +89,6 @@
                         <span class="name-highlight">Gabriele Rizzitiello</span>
                     </h1>
                     <p class="hero-subtitle" data-i18n="hero.subtitle">Data Engineer & Complex Systems Student</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta">Scopri i miei progetti</a>
-                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.contact">Contattami</a>
-                    </div>
                 </div>
                 <div class="scroll-indicator">
                     <div class="scroll-arrow"></div>
@@ -155,8 +172,8 @@
                     <h2 class="section-title" data-i18n="projects.title">Progetti</h2>
                     <p class="section-subtitle" data-i18n="projects.subtitle">I miei lavori più significativi</p>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card">
+                <div class="projects-grid" id="projects-grid">
+                    <div class="project-card" data-project="data-integration">
                         <div class="project-header">
                             <i class="fas fa-database project-icon"></i>
                             <h3 data-i18n="projects.dataIntegration.title">Data Integration Project</h3>
@@ -170,7 +187,11 @@
                             <span class="tech-tag">Data Integration</span>
                             <span class="tech-tag">Schema Mediation</span>
                         </div>
-                        <div class="project-links">
+                        <div class="project-actions">
+                            <button class="btn-explore" onclick="openProjectModal('data-integration')">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="projects.explore">Esplora</span>
+                            </button>
                             <a href="https://github.com/gabrulele/Data_Integration" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span data-i18n="projects.viewCode">Vedi codice</span>
@@ -178,7 +199,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-project="claims-extraction">
                         <div class="project-header">
                             <i class="fas fa-brain project-icon"></i>
                             <h3 data-i18n="projects.claimsExtraction.title">Claims Extraction Project</h3>
@@ -191,7 +212,11 @@
                             <span class="tech-tag">NLP</span>
                             <span class="tech-tag">Machine Learning</span>
                         </div>
-                        <div class="project-links">
+                        <div class="project-actions">
+                            <button class="btn-explore" onclick="openProjectModal('claims-extraction')">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="projects.explore">Esplora</span>
+                            </button>
                             <a href="https://github.com/gabrulele/Claims_Extraction" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span data-i18n="projects.viewCode">Vedi codice</span>
@@ -199,7 +224,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-project="variable-stars">
                         <div class="project-header">
                             <i class="fas fa-star project-icon"></i>
                             <h3 data-i18n="projects.variableStars.title">Variable Stars Classification</h3>
@@ -212,7 +237,11 @@
                             <span class="tech-tag">Scikit-learn</span>
                             <span class="tech-tag">Astronomy</span>
                         </div>
-                        <div class="project-links">
+                        <div class="project-actions">
+                            <button class="btn-explore" onclick="openProjectModal('variable-stars')">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="projects.explore">Esplora</span>
+                            </button>
                             <a href="https://github.com/gabrulele/Variables_Stars_Classification" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span data-i18n="projects.viewCode">Vedi codice</span>
@@ -223,6 +252,19 @@
             </div>
         </section>
 
+        <!-- Project Modal -->
+        <div class="project-modal" id="project-modal">
+            <div class="modal-overlay" onclick="closeProjectModal()"></div>
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body" id="modal-body">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-header">
@@ -230,31 +272,69 @@
                     <p class="section-subtitle" data-i18n="contact.subtitle">Sono sempre aperto a nuove opportunità</p>
                 </div>
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
+                    <div class="contact-grid">
+                        <div class="contact-card email-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info">
                                 <h4 data-i18n="contact.email">Email</h4>
                                 <p>gab.rizzitiello@stud.uniroma3.it</p>
+                                <a href="mailto:gab.rizzitiello@stud.uniroma3.it" class="contact-btn">
+                                    <span data-i18n="contact.sendEmail">Invia Email</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
+
+                        <div class="contact-card location-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info">
                                 <h4 data-i18n="contact.location">Posizione</h4>
                                 <p data-i18n="contact.locationValue">Roma, Italia</p>
+                                <div class="location-details">
+                                    <span data-i18n="contact.timezone">Fuso orario: UTC+1</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-card social-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4 data-i18n="contact.social">Social Media</h4>
+                                <div class="social-links">
+                                    <a href="https://github.com/gabrulele" target="_blank" class="social-link github">
+                                        <i class="fab fa-github"></i>
+                                        <span>GitHub</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/rizzitiellogabriele" target="_blank" class="social-link linkedin">
+                                        <i class="fab fa-linkedin"></i>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/gabrulele" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/rizzitiellogabriele" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
+
+                    <div class="contact-form-section">
+                        <div class="contact-cta">
+                            <h3 data-i18n="contact.cta.title">Hai un progetto in mente?</h3>
+                            <p data-i18n="contact.cta.description">Sono sempre interessato a collaborazioni innovative e sfide nel campo del Data Engineering.</p>
+                            <div class="cta-buttons">
+                                <a href="mailto:gab.rizzitiello@stud.uniroma3.it" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span data-i18n="contact.cta.email">Scrivimi una email</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/rizzitiellogabriele" target="_blank" class="btn btn-secondary">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span data-i18n="contact.cta.linkedin">Contattami su LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
