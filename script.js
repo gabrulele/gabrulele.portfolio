@@ -10,7 +10,7 @@ const translations = {
         },
         hero: {
             greeting: "Ciao, sono",
-            subtitle: "Data Engineer & Studente di Sistemi Complessi",
+            subtitle: "Data Engineer & Complex Computer Systems student",
             contact: "Contattami",
             downloadCV: "Scarica CV"
         },
@@ -85,14 +85,14 @@ const translations = {
         },
         hero: {
             greeting: "Hi, I'm",
-            subtitle: "Data Engineer & Computer Engineering Student",
+            subtitle: "Data Engineer & Complex Computer Systems student",
             contact: "Contact me",
             downloadCV: "Download CV"
         },
         about: {
             title: "About me",
             subtitle: "My story and journey",
-            description: "My name is Gabriele Rizzitiello and I'm a Computer Engineering student, currently pursuing my Master's degree in Data Engineering at Roma Tre University. I'm particularly passionate about contexts related to Big Data, data analysis, and Deep Learning. On this page, I try to collect the main projects developed during my years of study; each project has represented an opportunity to apply my skills and learn new technologies.",
+            description: "My name is Gabriele Rizzitiello, and I am a Computer Engineering student currently pursuing a Master's degree in Data Engineering at Roma Tre University. I am particularly passionate about topics related to Big Data, data analysis, and Deep Learning. On this page, I aim to collect the main projects I have worked on during my years of study. Each project has represented an opportunity to apply my skills and learn new technologies.",
             projects: "Completed projects",
             experience: "Years of experience",
             passion: "Passion for data"
@@ -160,14 +160,14 @@ const translations = {
         },
         hero: {
             greeting: "Hola, soy",
-            subtitle: "Ingeniero de Datos y Estudiante de Ingeniería Informática",
+            subtitle: "Data Engineer & Complex Computer Systems student",
             contact: "Contáctame",
             downloadCV: "Descargar CV"
         },
         about: {
             title: "Sobre mí",
             subtitle: "Mi historia y trayectoria",
-            description: "Me llamo Gabriele Rizzitiello y soy estudiante de Ingeniería Informática, actualmente cursando mi maestría en Ingeniería de Datos en la Universidad Roma Tre. Soy particularmente apasionado por contextos relacionados con Big Data, análisis de datos y Deep Learning. En esta página trato de recopilar los principales proyectos desarrollados durante mis años de estudio; cada proyecto ha representado una oportunidad para aplicar mis habilidades y aprender nuevas tecnologías.",
+            description: "Me llamo Gabriele Rizzitiello y soy estudiante de Ingeniería Informática. Actualmente estoy cursando el máster en Ingeniería de Datos en la Universidad de Roma Tre. Me apasionan especialmente los temas relacionados con Big Data, análisis de datos y Deep Learning. En esta página intento recopilar los principales proyectos realizados durante mis años de estudio. Cada proyecto ha sido una oportunidad para aplicar mis habilidades y aprender nuevas tecnologías.",
             projects: "Proyectos completados",
             experience: "Años de experiencia",
             passion: "Pasión por los datos"
