@@ -1122,3 +1122,66 @@ footer p {
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+/* Mantieni tutto il CSS precedente e aggiungi/modifica queste parti: */
+
+/* Hero Title - Dimensione ridotta */
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3rem); /* Ridotto da 2.5rem, 5vw, 4rem */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.name-highlight {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem; /* Ridotto leggermente */
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Hero Actions - Nuovo container per i pulsanti */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Skills Grid aggiornato per 5 categorie */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Responsive per hero actions */
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Ancora più piccolo su mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.6rem, 4vw, 2rem); /* Molto più piccolo su mobile piccolo */
+  }
+}

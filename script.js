@@ -10,13 +10,15 @@ const translations = {
         },
         hero: {
             greeting: "Ciao, sono",
-            subtitle: "Data Engineer & Studente di Sistemi Complessi"
+            subtitle: "Data Engineer & Studente di Sistemi Complessi",
+            contact: "Contattami",
+            downloadCV: "Scarica CV"
         },
         about: {
             title: "Chi sono",
             subtitle: "La mia storia e il mio percorso",
             description: "Mi chiamo Gabriele Rizzitiello e sono uno studente di Ingegneria Informatica, attualmente sto conseguendo la laurea magistrale in Data Engineering presso l'Università degli Studi di Roma Tre. Sono particolarmente appassionato a contesti di studio legati a Big Data, analisi dei dati e Deep Learning. In questa pagina cerco di raccogliere i principali progetti realizzati durante gli anni di studio, ogni progetto ha rappresentato un'opportunità per applicare le mie competenze e imparare nuove tecnologie.",
-            projects: "download CV",
+            projects: "Progetti completati",
             experience: "Anni di esperienza", 
             passion: "Passione per i dati"
         },
@@ -24,8 +26,10 @@ const translations = {
             title: "Competenze",
             subtitle: "Tech Stack",
             programming: "Linguaggi di Programmazione",
-            data: "Data Engineering & Big Data",
-            tools: "Tools & Frameworks"
+            web: "Frontend & Web",
+            bigdata: "Big Data & Data Engineering",
+            ml: "Machine Learning & AI",
+            tools: "Framework & Tools"
         },
         projects: {
             title: "Progetti",
@@ -81,22 +85,26 @@ const translations = {
         },
         hero: {
             greeting: "Hi, I'm",
-            subtitle: "Data Engineer & Complex Systems Student"
+            subtitle: "Data Engineer & Computer Engineering Student",
+            contact: "Contact me",
+            downloadCV: "Download CV"
         },
         about: {
             title: "About me",
             subtitle: "My story and journey",
-            description: "My name is Gabriele Rizzitiello and I'm a Complex computer systems student, currently studying for my Master's degree at Roma Tre University in Data Engineering. I'm passionate about innovative technologies and data analysis.",
+            description: "My name is Gabriele Rizzitiello and I'm a Computer Engineering student, currently pursuing my Master's degree in Data Engineering at Roma Tre University. I'm particularly passionate about contexts related to Big Data, data analysis, and Deep Learning. On this page, I try to collect the main projects developed during my years of study; each project has represented an opportunity to apply my skills and learn new technologies.",
             projects: "Completed projects",
             experience: "Years of experience",
             passion: "Passion for data"
         },
         skills: {
             title: "Skills", 
-            subtitle: "Technologies I use",
+            subtitle: "Tech Stack",
             programming: "Programming Languages",
-            data: "Data Engineering",
-            tools: "Tools & Frameworks"
+            web: "Frontend & Web",
+            bigdata: "Big Data & Data Engineering",
+            ml: "Machine Learning & AI",
+            tools: "Framework & Tools"
         },
         projects: {
             title: "Projects",
@@ -152,22 +160,26 @@ const translations = {
         },
         hero: {
             greeting: "Hola, soy",
-            subtitle: "Ingeniero de Datos y Estudiante de Sistemas Complejos"
+            subtitle: "Ingeniero de Datos y Estudiante de Ingeniería Informática",
+            contact: "Contáctame",
+            downloadCV: "Descargar CV"
         },
         about: {
             title: "Sobre mí",
             subtitle: "Mi historia y trayectoria",
-            description: "Me llamo Gabriele Rizzitiello y soy estudiante de Sistemas informáticos complejos, actualmente cursando mi maestría en Ingeniería de Datos en la Universidad Roma Tre. Me apasionan las tecnologías innovadoras y el análisis de datos.",
+            description: "Me llamo Gabriele Rizzitiello y soy estudiante de Ingeniería Informática, actualmente cursando mi maestría en Ingeniería de Datos en la Universidad Roma Tre. Soy particularmente apasionado por contextos relacionados con Big Data, análisis de datos y Deep Learning. En esta página trato de recopilar los principales proyectos desarrollados durante mis años de estudio; cada proyecto ha representado una oportunidad para aplicar mis habilidades y aprender nuevas tecnologías.",
             projects: "Proyectos completados",
             experience: "Años de experiencia",
             passion: "Pasión por los datos"
         },
         skills: {
             title: "Habilidades",
-            subtitle: "Tecnologías que uso",
+            subtitle: "Tech Stack",
             programming: "Lenguajes de Programación",
-            data: "Ingeniería de Datos",
-            tools: "Herramientas y Frameworks"
+            web: "Frontend & Web",
+            bigdata: "Big Data e Ingeniería de Datos",
+            ml: "Machine Learning e IA",
+            tools: "Frameworks y Herramientas"
         },
         projects: {
             title: "Proyectos",
@@ -344,6 +356,20 @@ function openProjectModal(projectId) {
     if (!project || !projectInfo) return;
     
     const modalBody = document.getElementById('modal-body');
+    
+    // Get context label based on language
+    const contextLabel = currentLang === 'it' ? 'Contesto del Progetto' : 
+                        currentLang === 'en' ? 'Project Context' : 
+                        'Contexto del Proyecto';
+    
+    const techLabel = currentLang === 'it' ? 'Tecnologie Utilizzate' : 
+                     currentLang === 'en' ? 'Technologies Used' : 
+                     'Tecnologías Utilizadas';
+    
+    const linksLabel = currentLang === 'it' ? 'Link Utili' : 
+                      currentLang === 'en' ? 'Useful Links' : 
+                      'Enlaces Útiles';
+    
     modalBody.innerHTML = `
         <div class="modal-header">
             <i class="${projectInfo.icon} modal-icon"></i>
@@ -355,19 +381,19 @@ function openProjectModal(projectId) {
         </div>
         
         <div class="modal-section">
-            <h4>Contesto del Progetto</h4>
+            <h4>${contextLabel}</h4>
             <p>${project.context}</p>
         </div>
         
         <div class="modal-section">
-            <h4>Tecnologie Utilizzate</h4>
+            <h4>${techLabel}</h4>
             <div class="modal-tech">
                 ${projectInfo.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
             </div>
         </div>
         
         <div class="modal-section">
-            <h4>Link Utili</h4>
+            <h4>${linksLabel}</h4>
             <div class="modal-links">
                 ${projectInfo.links.map(link => 
                     `<a href="${link.url}" target="_blank" class="modal-link">
@@ -477,6 +503,25 @@ function initTypingEffect() {
     }
 }
 
+// CV Download functionality
+function downloadCV() {
+    // You can replace this with the actual path to your CV
+    const cvUrl = './cv/Gabriele_Rizzitiello_CV.pdf';
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'Gabriele_Rizzitiello_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show toast notification
+    const currentLang = localStorage.getItem('language') || 'it';
+    const message = currentLang === 'it' ? 'Download CV avviato!' : 
+                   currentLang === 'en' ? 'CV download started!' : 
+                   '¡Descarga de CV iniciada!';
+    showToast(message);
+}
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -542,6 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global functions for modal (called from HTML)
 window.openProjectModal = openProjectModal;
 window.closeProjectModal = closeProjectModal;
+window.downloadCV = downloadCV;
 
 // Handle window resize
 window.addEventListener('resize', () => {
@@ -557,36 +603,15 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
-// Add scroll to top functionality
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Show scroll to top button on scroll
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const scrollButton = document.querySelector('.scroll-to-top');
-    
-    if (scrollButton) {
-        if (scrollTop > 500) {
-            scrollButton.style.opacity = '1';
-            scrollButton.style.visibility = 'visible';
-        } else {
-            scrollButton.style.opacity = '0';
-            scrollButton.style.visibility = 'hidden';
-        }
-    }
-});
-
 // Email copying functionality
 function copyEmail() {
     const email = 'gab.rizzitiello@stud.uniroma3.it';
     navigator.clipboard.writeText(email).then(() => {
-        // Show toast notification
-        showToast('Email copiata negli appunti!');
+        const currentLang = localStorage.getItem('language') || 'it';
+        const message = currentLang === 'it' ? 'Email copiata negli appunti!' : 
+                       currentLang === 'en' ? 'Email copied to clipboard!' : 
+                       '¡Email copiado al portapapeles!';
+        showToast(message);
     });
 }
 
