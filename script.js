@@ -12,7 +12,7 @@ const translations = {
             greeting: "Ciao, sono",
             subtitle: "Data Engineer & Complex Computer Systems student",
             contact: "Contattami",
-            downloadCV: "Scarica CV"
+            downloadCV: "Scarica CV (eng)"
         },
         about: {
             title: "Chi sono",
@@ -87,7 +87,7 @@ const translations = {
             greeting: "Hi, I'm",
             subtitle: "Data Engineer & Complex Computer Systems student",
             contact: "Contact me",
-            downloadCV: "Download CV"
+            downloadCV: "Download CV (eng)"
         },
         about: {
             title: "About me",
@@ -162,7 +162,7 @@ const translations = {
             greeting: "Hola, soy",
             subtitle: "Data Engineer & Complex Computer Systems student",
             contact: "Contáctame",
-            downloadCV: "Descargar CV"
+            downloadCV: "Descargar CV (eng)"
         },
         about: {
             title: "Sobre mí",
