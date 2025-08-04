@@ -35,7 +35,7 @@ const translations = {
             title: "Progetti",
             subtitle: "I miei lavori più significativi",
             explore: "Esplora",
-            viewCode: "Vedi codice",
+            viewCode: "Vedi dettaglio",
             dataIntegration: {
                 title: "Data Integration Project",
                 description: "Progetto di integrazione dati con focus sulla creazione di schemi mediati. L'obiettivo principale era unificare e rendere coerenti i dati provenienti da varie fonti.",
@@ -65,6 +65,12 @@ const translations = {
                 description: "Esplorazione interattiva di dati multivariati attraverso un diagramma a corde.",
                 fullDescription: "Il progetto permette di esplorare in modo interattivo i punti di vista dei personaggi attraverso un diagramma a corde e un grafo basato su dati JSON, offrendo funzioni di selezione, tooltip informativi e filtri per stagione.",
                 context: "Sviluppato come parte di un corso di data visualization, questo progetto combina tecniche di visualizzazione avanzate con un'interfaccia utente interattiva."
+            },
+            cpQueryTranslate: {
+                title: "Caso di studio sulla geometria computazionale",
+                description: "Argomento: Ricerca della coppia più vicina in una query traslata",
+                fullDescription: "Questo report è stato realizzato per il corso Algoritmi per Big Data e riassume uno studio di ricerca molto interessante presentato nel paper Searching for the closest-pair in a query translate di Jie Xue, Yuan Li, Saladi Rahul e Ravi Janardan.",
+                context: "Sviluppato come parte di un corso di ingegneria dei dati"
             }
         },
         contact: {
@@ -122,7 +128,7 @@ const translations = {
             title: "Projects",
             subtitle: "My most significant works",
             explore: "Explore",
-            viewCode: "View code",
+            viewCode: "View detail",
             dataIntegration: {
                 title: "Data Integration Project",
                 description: "Data integration project focusing on the creation of mediated schemas. The main goal was to unify and make consistent data from various sources.",
@@ -152,6 +158,12 @@ const translations = {
                 description: "Interactive exploration of multivariate data through a chord diagram.",
                 fullDescription: "The project allows interactive exploration of characters' points of view through a chord diagram and a graph based on JSON data, offering selection functions, informative tooltips, and season filters.",
                 context: "Developed as part of a data visualization course, this project combines advanced visualization techniques with an interactive user interface."
+            },
+            cpQueryTranslate: {
+                title: "Case study about computational geometry",
+                description: "Topic: Searching for the closest-pair in a query translate",
+                fullDescription: "This report was created for the course Algorithms for Big Data and summarizes a very interesting research study presented in the paper Searching for the closest-pair in a query translate by Jie Xue, Yuan Li, Saladi Rahul, and Ravi Janardan.",
+                context: "Developed as part of a data engineering course"
             }
         },
         contact: {
@@ -209,7 +221,7 @@ const translations = {
             title: "Proyectos",
             subtitle: "Mis trabajos más significativos",
             explore: "Explorar",
-            viewCode: "Ver código",
+            viewCode: "Ver detalle",
             dataIntegration: {
                 title: "Proyecto de Integración de Datos",
                 description: "Proyecto de integración de datos centrado en la creación de esquemas mediados. El objetivo principal era unificar y hacer consistentes los datos de varias fuentes.",
@@ -239,6 +251,12 @@ const translations = {
                 description: "Exploración interactiva de datos multivariados a través de un diagrama de cuerdas.",
                 fullDescription: "El proyecto permite explorar de forma interactiva los puntos de vista de los personajes a través de un diagrama de cuerdas y un grafo basado en datos JSON, ofreciendo funciones de selección, tooltips informativos y filtros por temporada.",
                 context: "Desarrollado como parte de un curso de visualización de datos, este proyecto combina técnicas avanzadas de visualización con una interfaz de usuario interactiva."
+            },
+            cpQueryTranslate: {
+                title: "Estudio de caso sobre geometría computacional",
+                description: "Tema: Búsqueda del par más cercano en una consulta trasladada",
+                fullDescription: "Este informe fue realizado para el curso Algoritmos para Big Data y resume un estudio de investigación muy interesante presentado en el artículo Searching for the closest-pair in a query translate de Jie Xue, Yuan Li, Saladi Rahul y Ravi Janardan.",
+                context: "Desarrollado como parte de un curso de ingeniería de datos"
             }
         },
         contact: {
@@ -298,6 +316,13 @@ const projectData = {
         technologies: ['Python', 'D3.js', 'Data Visualization'],
         links: [
             { url: 'https://github.com/ilTrabba/ECHOgraph', text: 'View on GitHub', icon: 'fab fa-github' }
+        ]
+    },
+    'cpquerytranslate': {
+        icon: 'fas fa-code',
+        technologies: ['Algorithms', 'Computational Geometry'],
+        links: [
+            { url: 'https://arxiv.org/abs/1807.09498', text: 'View paper', icon: 'fab fa-github' }
         ]
     }
 };
