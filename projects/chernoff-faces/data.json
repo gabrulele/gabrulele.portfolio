@@ -1,0 +1,12 @@
+[
+  { "id": 1, "roundness": 70, "noseSize": 30, "eyeSize": 120, "mouthWidth": 60 },
+  { "id": 2, "roundness": 50, "noseSize": 20, "eyeSize": 40, "mouthWidth": 80 },
+  { "id": 3, "roundness": 80, "noseSize": 40, "eyeSize": 30, "mouthWidth": 70 },
+  { "id": 4, "roundness": 60, "noseSize": 35, "eyeSize": 25, "mouthWidth": 50 },
+  { "id": 5, "roundness": 90, "noseSize": 25, "eyeSize": 840, "mouthWidth": 90 },
+  { "id": 6, "roundness": 45, "noseSize": 7, "eyeSize": 181, "mouthWidth": 30 },
+  { "id": 7, "roundness": 75, "noseSize": 30, "eyeSize": 60, "mouthWidth": 60 },
+  { "id": 8, "roundness": 55, "noseSize": 20, "eyeSize": 150, "mouthWidth": 40 },
+  { "id": 9, "roundness": 85, "noseSize": 80, "eyeSize": 145, "mouthWidth": 70 },
+  { "id": 10, "roundness": 165, "noseSize": 25, "eyeSize": 20, "mouthWidth": 160 }
+]

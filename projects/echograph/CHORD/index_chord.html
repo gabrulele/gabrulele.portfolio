@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chord Diagram Visualization</title>
+    <link rel="stylesheet" href="chord_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="visualization-container">
+        <svg id="visualization" viewBox="0 0 800 600">
+            <g id="zoom-group"></g>
+        </svg>
+        
+        <!-- Timeline filtro stagioni (POSIZIONATO COME IL GRAPH) -->
+        <div id="season-timeline">
+            <span style="font-size: 13px; font-weight: 600; margin-bottom: 5px; font-family: 'Poppins', sans-serif;"><strong>Chapters</strong></span>
+            <div id="season-dots">
+                <!-- I dot saranno generati da JS -->
+            </div>
+        </div>
+
+        <!-- Info Panel (POSIZIONATO COME LA LEGENDA DEL GRAPH) -->
+        <div class="info-panel">
+            <div id="info-content">
+                <strong>Istructions:</strong><br>
+                Click on a character's name to highlight his/her relationships<br>
+                Click on an inside label to highlight only the links that go towards it<br>
+            </div>
+        </div>
+
+        <!-- Toggle Switch (POSIZIONATO COME IL GRAPH) -->
+        <div class="page-toggle">
+            <label class="toggle-label">Switch View</label>
+            <label class="switch">
+                <input type="checkbox" id="pageToggle" checked>
+                <span class="slider"></span>
+            </label>
+            <div class="toggle-labels">
+                <span>Graph Visualization</span>
+            </div>
+        </div>
+    </div>
+
+        <!-- Legenda -->
+    <div id="legend" class="legend">
+    <span style="font-size: 13px; font-weight: 600; margin-bottom: 10px; font-family: 'Poppins', sans-serif;">Links</span>
+    <div><span style="background:#ff6b6b; font-family: 'Poppins', sans-serif;"></span> incoming</div>
+    <div><span style="background:#4fc3f7; font-family: 'Poppins', sans-serif;"></span> outcoming</div>
+    <div><span style="background:#000000; font-family: 'Poppins', sans-serif;"></span> basic</div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="chord.js"></script>
+</body>
+</html>

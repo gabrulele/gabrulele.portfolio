@@ -53,6 +53,18 @@ const translations = {
                 description: "Classificazione di stelle variabili utilizzando tecniche di machine learning su un dataset di osservazioni astronomiche.",
                 fullDescription: "Le stelle variabili rappresentano un fenomeno affascinante in astronomia. Questo progetto mira a sviluppare un modello capace di classificare diversi tipi di stelle variabili basandosi sulle loro caratteristiche osservative. Il progetto utilizza tecniche di machine learning avanzate per l'analisi di dati astronomici.",
                 context: "Progetto interdisciplinare che combina astronomia e data science, sviluppato per esplorare l'applicazione del machine learning nel campo dell'astrofisica."
+            },
+            chernoffFaces: {
+                title: "Chernoff Faces Visualizer",
+                description: "Visualizzazione di dati multivariati utilizzando le facce di Chernoff.",
+                fullDescription: "Questo progetto si concentra sulla visualizzazione di dati multivariati attraverso l'uso delle facce di Chernoff, una tecnica che mappa le caratteristiche dei dati su volti umani stilizzati. L'obiettivo è facilitare l'interpretazione dei dati complessi in modo intuitivo.",
+                context: "Sviluppato come parte di un corso di data visualization, questo progetto esplora l'intersezione tra arte e scienza nella rappresentazione dei dati."
+            },
+            ECHOgraph: {
+                title: "ECHOgraph",
+                description: "Esplorazione interattiva di dati multivariati attraverso un diagramma a corde.",
+                fullDescription: "Il progetto permette di esplorare in modo interattivo i punti di vista dei personaggi attraverso un diagramma a corde e un grafo basato su dati JSON, offrendo funzioni di selezione, tooltip informativi e filtri per stagione.",
+                context: "Sviluppato come parte di un corso di data visualization, questo progetto combina tecniche di visualizzazione avanzate con un'interfaccia utente interattiva."
             }
         },
         contact: {
@@ -128,6 +140,18 @@ const translations = {
                 description: "Classification of variable stars using machine learning techniques on a dataset of astronomical observations.",
                 fullDescription: "Variable stars are a fascinating phenomenon in astronomy. This project aims to develop a model capable of classifying different types of variable stars based on their observational characteristics. The project uses advanced machine learning techniques for astronomical data analysis.",
                 context: "Interdisciplinary project combining astronomy and data science, developed to explore machine learning applications in astrophysics."
+            },
+            chernoffFaces: {
+                title: "Chernoff Faces Visualizer",
+                description: "Visualization of multivariate data using Chernoff faces.",
+                fullDescription: "This project focuses on visualizing multivariate data through the use of Chernoff faces, a technique that maps data features onto stylized human faces. The goal is to facilitate the intuitive interpretation of complex data.",
+                context: "Developed as part of a data visualization course, this project explores the intersection of art and science in data representation."
+            },
+            ECHOgraph: {
+                title: "ECHOgraph",
+                description: "Interactive exploration of multivariate data through a chord diagram.",
+                fullDescription: "The project allows interactive exploration of characters' points of view through a chord diagram and a graph based on JSON data, offering selection functions, informative tooltips, and season filters.",
+                context: "Developed as part of a data visualization course, this project combines advanced visualization techniques with an interactive user interface."
             }
         },
         contact: {
@@ -203,6 +227,18 @@ const translations = {
                 description: "Clasificación de estrellas variables utilizando técnicas de machine learning en un conjunto de datos de observaciones astronómicas.",
                 fullDescription: "Las estrellas variables son un fenómeno fascinante en astronomía. Este proyecto tiene como objetivo desarrollar un modelo capaz de clasificar diferentes tipos de estrellas variables basándose en sus características observacionales. El proyecto utiliza técnicas avanzadas de machine learning para el análisis de datos astronómicos.",
                 context: "Proyecto interdisciplinario que combina astronomía y ciencia de datos, desarrollado para explorar aplicaciones de machine learning en astrofísica."
+            },
+            chernoffFaces: {
+                title: "Visualizador de Caras de Chernoff",
+                description: "Visualización de datos multivariantes utilizando las caras de Chernoff.",
+                fullDescription: "Este proyecto se centra en la visualización de datos multivariantes mediante el uso de las caras de Chernoff, una técnica que asigna las características de los datos a rostros humanos estilizados. El objetivo es facilitar la interpretación intuitiva de datos complejos.",
+                context: "Desarrollado como parte de un curso de visualización de datos, este proyecto explora la intersección entre el arte y la ciencia en la representación de datos."
+            },
+            ECHOgraph: {
+                title: "ECHOgraph",
+                description: "Exploración interactiva de datos multivariados a través de un diagrama de cuerdas.",
+                fullDescription: "El proyecto permite explorar de forma interactiva los puntos de vista de los personajes a través de un diagrama de cuerdas y un grafo basado en datos JSON, ofreciendo funciones de selección, tooltips informativos y filtros por temporada.",
+                context: "Desarrollado como parte de un curso de visualización de datos, este proyecto combina técnicas avanzadas de visualización con una interfaz de usuario interactiva."
             }
         },
         contact: {
@@ -248,6 +284,20 @@ const projectData = {
         technologies: ['Python', 'Scikit-learn', 'Astronomy', 'Machine Learning', 'Data Analysis'],
         links: [
             { url: 'https://github.com/gabrulele/Variables_Stars_Classification', text: 'View on GitHub', icon: 'fab fa-github' }
+        ]
+    },
+    'chernoff-faces': {
+        icon: 'fas fa-smile',
+        technologies: ['D3.js', 'JavaScript', 'HTML & CSS'],
+        links: [
+            { url: 'https://github.com/gabrulele/E', text: 'View on GitHub', icon: 'fab fa-github' }
+        ]
+    },
+    'echograph': {
+        icon: 'fas fa-waveform',
+        technologies: ['Python', 'D3.js', 'Data Visualization'],
+        links: [
+            { url: 'https://github.com/ilTrabba/ECHOgraph', text: 'View on GitHub', icon: 'fab fa-github' }
         ]
     }
 };

@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.visualization-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    background: #f9f9f9;
+    cursor: grab;
+}
+
+svg:active {
+    cursor: grabbing;
+}
+
+.character-arc {
+    fill: none;
+    stroke: #69b3a2;
+    stroke-width: 6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.character-arc:hover {
+    filter: drop-shadow(0 0 15px rgba(79, 195, 247, 0.8));
+    stroke-width: 8;
+}
+
+.character-text {
+    font-size: 16px;
+    font-weight: bold;
+    fill: #333;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+
+/* FIXED: Label caratteristiche - posizionate esattamente sulla circonferenza */
+.characteristic-text {
+    font-size: 14px;
+    fill: #333;
+    dominant-baseline: central;
+    font-weight: 500;
+    /* Rimuovi text-anchor da qui, sarà gestito dinamicamente dal JS */
+}
+
+/* FIXED: Nomi rossi pensiero - posizionati esattamente sulla circonferenza */
+.thought-text {
+    font-size: 14px;
+    fill: #ff6b6b;
+    dominant-baseline: central;
+    font-weight: bold;
+    /* Rimuovi text-anchor da qui, sarà gestito dinamicamente dal JS */
+}
+
+.clickable-label {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clickable-label:hover {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.connection-path {
+    fill: none;
+    stroke-width: 3;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    stroke: #444444;
+}
+
+.highlighted {
+    opacity: 1;
+    stroke-width: 4;
+}
+
+.dimmed {
+    opacity: 0.2;
+}
+
+/* NUOVO: Stili per le linee di collegamento label-circonferenza */
+.label-connection {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* NUOVO: Cerchio di riferimento */
+.reference-circle {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* =========================================
+   INFO PANEL (COME LA LEGENDA DEL GRAPH)
+   ========================================= */
+.info-panel {
+    position: fixed;
+    top: 80px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    color: #333;
+    z-index: 1000;
+    max-width: 356px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   TIMELINE DELLE STAGIONI (IDENTICA AL GRAPH)
+   ========================================= */
+#season-timeline {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+#season-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.season-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+}
+
+.season-dot:hover {
+    background-color: #999;
+    transform: scale(1.1);
+}
+
+.season-dot.selected {
+    background-color: #333;
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    transform: scale(1.2);
+}
+
+/* Pulsante di reset quadrato (IDENTICO AL GRAPH) */
+.reset-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #e74c3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    margin-left: 8px;
+}
+
+.reset-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.4);
+}
+
+.reset-button:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   TOGGLE SWITCH (IDENTICO AL GRAPH)
+   ========================================= */
+.page-toggle {
+    position: fixed;
+    top: 160px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-family: 'Arial', sans-serif;
+}
+
+.toggle-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    color: #1b1b1b;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #69b3a2 0%, #69b3a2 100%);
+    transition: .4s;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(117, 224, 208, 0.3);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.toggle-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #666;
+}
+
+/* Animazioni per transizione pagina */
+.page-transition {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .info-panel {
+        top: 10px;
+        left: 10px;
+        max-width: 280px;
+        font-size: 12px;
+    }
+    
+    #season-timeline {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+    
+    .page-toggle {
+        top: 160px;
+        left: 10px;
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   LEGENDA
+   ========================================= */
+.legend {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    color: #333;
+    z-index: 1000;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.legend div:last-child {
+    margin-bottom: 0;
+}
+
+.legend span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+/* Toggle deve apparire/scomparire istantaneamente */
+.toggle-container {
+    transition: none !important;
+    animation: none !important;
+}
+
+.toggle-container.hidden {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.toggle-container.visible {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
