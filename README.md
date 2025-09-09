@@ -1,12 +1,12 @@
 # Gabriele Rizzitiello - Portfolio
 
-Un portfolio moderno e responsive per presentare i miei progetti e competenze nel campo del Data Engineering e dei sistemi complessi.
+Un portfolio per presentare i miei progetti e competenze nel campo del Data Engineering e dei sistemi complessi.
 
 🌐 **Live Site**: https://gabrulele.github.io/gabrulele.portfolio
 
 ## ✨ Caratteristiche
 
-### 🎨 Design Moderno
+### 🎨 Design
 - Layout responsive ottimizzato per tutti i dispositivi
 - Design pulito e professionale con animazioni fluide
 - Tipografia moderna con font Inter
@@ -23,12 +23,6 @@ Un portfolio moderno e responsive per presentare i miei progetti e competenze ne
 - Selettore di lingua nel header
 - Traduzioni complete di tutto il contenuto
 - Preferenze linguistiche salvate nel localStorage
-
-### 📱 Responsive Design
-- Menu hamburger per dispositivi mobile
-- Layout adattivo per tablet e desktop
-- Immagini ottimizzate per diverse risoluzioni
-- Navigazione touch-friendly
 
 ### 🚀 Funzionalità Interactive
 - Smooth scrolling tra le sezioni
@@ -172,7 +166,7 @@ Le animazioni sono configurabili tramite CSS:
 
 ## 📄 Licenza
 
-© 2024 Gabriele Rizzitiello. Tutti i diritti riservati.
+© 2025 Gabriele Rizzitiello. Tutti i diritti riservati.
 
 ## 🤝 Contributi
 
@@ -180,4 +174,4 @@ Suggerimenti e miglioramenti sono sempre benvenuti! Sentiti libero di aprire un 
 
 ---
 
-Fatto con ❤️ da [Gabriele Rizzitiello](https://github.com/gabrulele)
+Fatto da [Gabriele Rizzitiello](https://github.com/gabrulele)
